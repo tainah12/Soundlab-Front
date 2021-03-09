@@ -1,0 +1,56 @@
+import styled from "styled-components"
+import homeBackImage from "../../assets/homeBackImage.png"
+import {primaryColor, secondaryColor, tertiaryColor, neutralColor} from "../../constants/colors"
+
+export const Container = styled.h1`
+display:flex;
+justify-content: center;
+margin: 0;
+padding: 0;
+width: 100vw;
+height:100vh;
+background-image: url(${homeBackImage});
+
+`
+export const Box = styled.div`
+width: 30vw;
+height: 60vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+align-content: space-between;
+align-self: center;
+justify-content: center;
+margin: 0 auto;
+`;
+
+//-------------- FORMS
+
+
+export const Wrapper = styled.div` 
+  width: 100vw;
+  max-width: 420px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px ${tertiaryColor};
+`      
+export const FormContainer = styled.form`  
+  display:flex;
+  flex-direction: column;
+  width: 90vw;
+  max-width: 420px;
+  border-radius: 2px;
+`     
+export const Login = styled.p` 
+  width: 100vw;
+  height: 42px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: -0.39px;
+  text-align: center;
+  color: ${neutralColor};
+  padding: 12px 32px;
+`     
