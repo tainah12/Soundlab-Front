@@ -5,15 +5,20 @@ import { InputLabel, IconButton, InputAdornment, OutlinedInput, Button, FormCont
 import { useHistory } from "react-router-dom"
 import { goToSignup, goToLogin, goToFeed } from "../../routes/coordinator"
 import useForm from "../../hooks/useForm"
+import { signup } from "../../services/user"
 
 const SignupForm = () => {
     const [form, onChange, clear] = useForm({ name: "", email: "", nickname: "", password: "" })
 
-    const onSubmitForm = () => {
+    const history = useHistory()
+
+    const onSubmitForm = (event) => {
+        console.log(event)
+        event.preventDefault()
+        signup(form, history)
+        clear()
 
     }
-
-    const history = useHistory()
 
     return (
         <FormContainer>
@@ -40,7 +45,7 @@ const SignupForm = () => {
                     fullWidth
                     label="E-mail"
                     required
-                    style={{ margin: '15px 0px'}}
+                    style={{ margin: '15px 0px' }}
                     color="secondary"
                     type="email"
                     //---------- executa o estado
@@ -69,7 +74,7 @@ const SignupForm = () => {
                     fullWidth
                     label="Senha"
                     required
-                    style={{ margin: '15px 0px'}}
+                    style={{ margin: '15px 0px' }}
                     color="secondary"
                     type="password"
                     //---------- executa o estado
@@ -78,14 +83,14 @@ const SignupForm = () => {
                     onChange={onChange}
                 />
 
-            <Button
-                onChange={() => goToFeed(history)}
-                fullWidth
-                type="submit"
-                variant="contained"
-                color="text"
+                <Button
+                    onChange={() => goToFeed(history)}
+                    fullWidth
+                    type="submit"
+                    variant="contained"
+                    color="text"
                 >
-                Entrar
+                    Entrar
             </Button>
 
             </form>

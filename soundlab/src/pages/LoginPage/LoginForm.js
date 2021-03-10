@@ -1,6 +1,6 @@
 import React from "react"
 //----------- estilização
-import { FormContainer, StyledTextField } from "./styled"
+import { FormContainer } from "./styled"
 import { Button, TextField  } from '@material-ui/core'
 //----------- anexos com logicas
 import useForm from "../../hooks/useForm"
