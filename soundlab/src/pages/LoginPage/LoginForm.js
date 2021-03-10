@@ -1,69 +1,73 @@
 import React from "react"
 //----------- estilização
 import { FormContainer } from "./styled"
-import { InputLabel, OutlinedInput, Button, FormControl, TextField } from '@material-ui/core'
+import { Button, TextField,  } from '@material-ui/core'
 //----------- anexos com logicas
 import useForm from "../../hooks/useForm"
+import { goToFeed } from "../../routes/coordinator"
+import { useHistory } from "react-router"
+import { login } from "../../services/user"
 
 const LoginForm = () => {
-    const [form, onChange, clear] = useForm({ email: "", password: "" })
+    const [form, onChange, clear] = useForm({ input: "", password: "" })
+
+    const history = useHistory()
 
     const onSubmitForm = (event) => {
         console.log(form)
         event.preventDefault()
+        login(form, history)
+        clear();
     }
 
     return (
-        <div>
-            <FormContainer onSubmit={onSubmitForm}>
+        <FormContainer>
+
+            <form onSubmit={onSubmitForm}>
+
                 <TextField
                     variant="outlined"
                     size="small"
+                    fullWidth
                     label="E-mail"
                     required
-                    style={{ margin: '8px 32px' }}
                     color="secondary"
                     type="email"
                     //---------- executa o estado
-                    name="email"
-                    value={form.email}
+                    name="input"
+                    value={form.input}
                     onChange={onChange}
                 />
-                <FormControl
+
+
+                <TextField
                     variant="outlined"
+                    size="small"
+                    fullWidth
+                    label="password"
+                    style={{ margin: '15px 0px'}}
                     required
-                    style={{ margin: '8px 32px' }}
-                    color="secondary">
+                    color="secondary"
+                    type="password"
+                    //---------- executa o estado
+                    name="password"
+                    value={form.password}
+                    onChange={onChange}
+                />
 
-                    <InputLabel
-                        margin="dense"
-                        label="password">
-                        Senha
-                        </InputLabel>
+            <Button
+                onChange={() => goToFeed(history)}
+                fullWidth
+                type="submit"
+                variant="contained"
+                color="text"
+                >
+                Entrar
+            </Button>
 
-                    <OutlinedInput
-                        margin="dense"
-                        label="Senha"
-                        type="password"
-                        //---------- executa o estado
-                        name="password"
-                        value={form.password}
-                        onChange={onChange}
-                    />
+            </form>
 
-                </FormControl>
-
-                <Button
-                    type="submit"
-                    variant="contained"
-                    color="text"
-                    style={{ margin: '8px 32px' }}>
-                    Entrar
-                </Button>
-
-            </FormContainer>
-
-        </div>
+        </FormContainer>
     )
 }
 

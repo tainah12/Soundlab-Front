@@ -14,6 +14,9 @@ const theme = createMuiTheme({
         text: {
             main: neutralColor,
         },
+
+        spacing: 8,
+
     },
 });
 

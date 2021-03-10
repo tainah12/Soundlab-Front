@@ -45,13 +45,14 @@ export const Wrapper = styled.div`
   justify-content: center;
   background-color: ${primaryColor};
 `      
-export const FormContainer = styled.form`  
+export const FormContainer = styled.div`  
   display:flex;
   flex-direction: column;
-  width: 90vw;
+  width: 65vw;
   max-width: 420px;
   border-radius: 2px;
 `     
+
 export const Register = styled.p` 
   width: 100vw;
   height: 42px;
