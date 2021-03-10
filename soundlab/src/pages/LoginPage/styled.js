@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import homeBackImage from "../../assets/homeBackImage.png"
 import {primaryColor, secondaryColor, tertiaryColor, neutralColor} from "../../constants/colors"
+import {  TextField } from '@material-ui/core'
 
 export const Container = styled.h1`
 display:flex;
@@ -48,7 +49,7 @@ export const Wrapper = styled.div`
 export const FormContainer = styled.div`  
   display:flex;
   flex-direction: column;
-  width: 65vw;
+  width: 85%;
   max-width: 420px;
   border-radius: 2px;
 `     

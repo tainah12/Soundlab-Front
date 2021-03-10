@@ -48,7 +48,7 @@ export const Wrapper = styled.div`
 export const FormContainer = styled.div`  
   display:flex;
   flex-direction: column;
-  width: 65vw;
+  width: 85%;
   max-width: 420px;
   border-radius: 2px;
   margin-bottom: 60px;

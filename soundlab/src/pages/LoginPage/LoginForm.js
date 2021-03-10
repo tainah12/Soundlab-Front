@@ -1,7 +1,7 @@
 import React from "react"
 //----------- estilização
-import { FormContainer } from "./styled"
-import { Button, TextField,  } from '@material-ui/core'
+import { FormContainer, StyledTextField } from "./styled"
+import { Button, TextField  } from '@material-ui/core'
 //----------- anexos com logicas
 import useForm from "../../hooks/useForm"
 import { goToFeed } from "../../routes/coordinator"
