@@ -24,18 +24,26 @@ justify-content: center;
 margin: 0 auto;
 `;
 
+export const SignupButtonContainer = styled.div`  
+  display:flex;
+  flex-direction: column;
+  width: 90vw;
+  max-width: 420px;
+  border-radius: 2px;
+`     
+
 //-------------- FORMS
 
 
 export const Wrapper = styled.div` 
-  width: 100vw;
   max-width: 420px;
-  height: 100vh;
+  max-height: 500px;
   display: flex;
+  align-self: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: solid 1px ${tertiaryColor};
+  background-color: ${primaryColor};
 `      
 export const FormContainer = styled.form`  
   display:flex;
@@ -44,11 +52,12 @@ export const FormContainer = styled.form`
   max-width: 420px;
   border-radius: 2px;
 `     
-export const Login = styled.p` 
+export const Register = styled.p` 
   width: 100vw;
   height: 42px;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: bold;
+  font-family: 'Comfortaa', cursive;
   letter-spacing: -0.39px;
   text-align: center;
   color: ${neutralColor};

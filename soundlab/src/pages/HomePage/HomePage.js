@@ -6,16 +6,24 @@ import { goToSignup, goToLogin } from "../../routes/coordinator"
 
 const HomePage = () => {
     const history = useHistory()
-    
+
     return (
         <Container>
             <HomeBackImage>
                 <Box>
                     <Title>Soundlab</Title>
-                    <Button onClick={() => goToSignup(history)} style={{ margin: "10px 0", width: "150px", borderRadius: "50px" }} variant="contained" color="secondary">
+                    <Button
+                        onClick={() => goToSignup(history)}
+                        style={{ margin: "10px 0", width: "150px", borderRadius: "50px" }}
+                        variant="contained"
+                        color="secondary">
                         Cadastro
                      </Button>
-                    <Button onClick={() => goToLogin(history)} style={{ margin: "10px 0", width: "150px", borderRadius: "50px" }} variant="contained" color="primary">
+                    <Button
+                        onClick={() => goToLogin(history)}
+                        style={{ margin: "10px 0", width: "150px", borderRadius: "50px" }}
+                        variant="contained"
+                        color="primary">
                         Login
                     </Button>
                 </Box>
@@ -24,4 +32,4 @@ const HomePage = () => {
     )
 }
 
-export default HomePage 
+export default HomePage
