@@ -1,13 +1,26 @@
 import React from "react"
 import useProtectedPage from "../../hooks/useProtectedPage"
+import { Container, Box, Itens, Title, MusicsBox, Buttons } from "./styled"
 
 const FeedPage = () => {
     useProtectedPage()
 
     return (
-        <div>
-            FeedPage
-        </div>
+        <Container>
+            <Box>
+                <Title>
+                    Suas músicas:
+                </Title>
+                <MusicsBox>
+                    <Itens>
+                        Music
+                    </Itens>
+                    <Buttons>
+                        + 
+                    </Buttons>
+                </MusicsBox>
+            </Box>
+        </Container>
     )
 }
 
